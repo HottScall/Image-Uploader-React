@@ -1,15 +1,16 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fonstawesome';
-import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fonstawesome";
+import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default props =>
-  props.image.map((image, i) =>
-    <div key={i} className='fade in' >
+  props.image.map((image, i) => (
+    <div key={i} className="fade in">
       <div
         onClick={() => props.removeImage(image.public_id)}
-        className='delete'
+        className="delete"
       >
-
-      
+        <FontAwesomeIcon icon={faTimesCircle} size="2x" />
+      </div>
+      <img src={image.secure_url} alt="" />
     </div>
-)
+  ));
