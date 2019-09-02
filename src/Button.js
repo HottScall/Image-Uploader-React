@@ -10,4 +10,11 @@ export default props =>
       </label>
       <input type='file' id='single' onChange={props.onChange} />
     </div>
-  </div>
+
+
+    <div className='button'>
+      <label htmlFor='multi'>
+        <input type='file' id='multi' onChange={props.onChange} multiple />
+      </label>
+    </div>
+</div>
