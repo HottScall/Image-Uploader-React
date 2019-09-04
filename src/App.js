@@ -33,4 +33,31 @@ export default class App extends Component {
         });
       });
   };
+
+  removeImage = id => {
+    this.setState({
+      images: this.setState.images.filter(image => image.public_id !== id)
+    });
+  };
+
+  render() {
+    const { uploading, images } = this.state;
+
+    const content = () => {
+      switch (true) {
+        case uploading:
+          return <Spinner />;
+        case images.length > 0:
+          return <Image images={images} removeImage={this.removeImage} />;
+        default:
+          return <Buttons onChange={this.onChange} />;
+      }
+    };
+
+    return (
+      <div>
+        <div className="buttons">{content()}</div>
+      </div>
+    );
+  }
 }
