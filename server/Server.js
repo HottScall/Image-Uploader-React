@@ -1,0 +1,6 @@
+require('dotenv').config()
+const express = require('express')
+const cloudinary = require('cloudinary')
+const formData = require('form-data')
+const cors = require('cors')
+const { CLIENT_ORIGIN } = require('./config')
